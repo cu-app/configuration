@@ -1,0 +1,60 @@
+{
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "crons": [
+    {
+      "path": "/api/cron/config-sync",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/cron/config-backup",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/sync-cu-data",
+      "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/motion-sync",
+      "schedule": "*/30 * * * *"
+    },
+    {
+      "path": "/api/cron/core-discovery",
+      "schedule": "0 */12 * * *"
+    },
+    {
+      "path": "/api/cron/seed-credit-unions",
+      "schedule": "0 2 * * 0"
+    },
+    {
+      "path": "/api/cron/unsplash-state-photos",
+      "schedule": "0 3 1 * *"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ]
+}

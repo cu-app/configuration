@@ -1,0 +1,22 @@
+{
+  "name": "cuapp-transaction-enrichment",
+  "version": "1.0.0",
+  "description": "MX Replacement - Transaction enrichment at the edge",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest",
+    "train": "node scripts/train-model.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.11.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.11.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231025.0",
+    "wrangler": "^3.13.2",
+    "vitest": "^0.34.6",
+    "typescript": "^5.2.2"
+  }
+}

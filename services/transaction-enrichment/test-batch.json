@@ -1,0 +1,71 @@
+{
+  "account_guid": "ACC-CHECKING-456",
+  "transactions": [
+    {
+      "guid": "TXN-20250115-001",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -87.43,
+      "description": "WM SUPERCENTER #1234 TAMPA FL",
+      "date": "2025-01-15",
+      "mcc_code": "5411",
+      "latitude": 27.9506,
+      "longitude": -82.4572
+    },
+    {
+      "guid": "TXN-20250115-002",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -5.45,
+      "description": "STARBUCKS STORE 12345",
+      "date": "2025-01-15",
+      "mcc_code": "5814"
+    },
+    {
+      "guid": "TXN-20250114-001",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -52.30,
+      "description": "SHELL OIL 54735478927 TAMPA FL",
+      "date": "2025-01-14",
+      "mcc_code": "5541"
+    },
+    {
+      "guid": "TXN-20250114-002",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -15.99,
+      "description": "NETFLIX.COM 866-579-7172 CA",
+      "date": "2025-01-14",
+      "mcc_code": "4899"
+    },
+    {
+      "guid": "TXN-20250113-001",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -125.67,
+      "description": "ELECTRIC COMPANY PAYMENT",
+      "date": "2025-01-13",
+      "mcc_code": "4900"
+    },
+    {
+      "guid": "TXN-20250112-001",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": 3500.00,
+      "description": "PAYROLL DIRECT DEPOSIT ACME CORP",
+      "date": "2025-01-12",
+      "type": "CREDIT"
+    },
+    {
+      "guid": "TXN-20250111-001",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -67.89,
+      "description": "AMZN MKTP US*2X3Y4Z5W6 AMAZON.COM/BILL WA",
+      "date": "2025-01-11",
+      "mcc_code": "5942"
+    },
+    {
+      "guid": "TXN-20250110-001",
+      "account_guid": "ACC-CHECKING-456",
+      "amount": -35.00,
+      "description": "OVERDRAFT FEE",
+      "date": "2025-01-10",
+      "mcc_code": "0000"
+    }
+  ]
+}

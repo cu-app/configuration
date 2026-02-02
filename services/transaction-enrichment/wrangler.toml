@@ -1,0 +1,33 @@
+name = "cuapp-transaction-enrichment"
+main = "src/index.ts"
+compatibility_date = "2023-10-25"
+
+# Cloudflare KV for merchant database and category mappings
+[[kv_namespaces]]
+binding = "MERCHANTS"
+id = "merchants_production"
+preview_id = "merchants_preview"
+
+[[kv_namespaces]]
+binding = "CATEGORIES"
+id = "categories_production"
+preview_id = "categories_preview"
+
+[[kv_namespaces]]
+binding = "PATTERNS"
+id = "patterns_production"
+preview_id = "patterns_preview"
+
+# Durable Objects for ML model serving
+[[durable_objects.bindings]]
+name = "CATEGORIZER"
+class_name = "TransactionCategorizer"
+script_name = "cuapp-transaction-enrichment"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+
+# Analytics Engine for tracking accuracy
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"

@@ -1,0 +1,9 @@
+{
+  "name": "CU Preview",
+  "short_name": "CU Preview",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#3B82F6",
+  "description": "Live preview app controlled by the design system"
+}

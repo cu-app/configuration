@@ -1,0 +1,39 @@
+{
+  "transaction": {
+    "guid": "TXN-20250115-001",
+    "account_guid": "ACC-CHECKING-456",
+    "amount": -15.99,
+    "description": "NETFLIX.COM 866-579-7172 CA 01/15",
+    "date": "2025-01-15",
+    "type": "DEBIT",
+    "status": "POSTED",
+    "mcc_code": "4899"
+  },
+  "account_guid": "ACC-CHECKING-456",
+  "history": [
+    {
+      "guid": "TXN-20241215-001",
+      "account_guid": "ACC-CHECKING-456",
+      "merchant_guid": "MER-NETFLIX",
+      "amount": -15.99,
+      "date": "2024-12-15",
+      "description": "Netflix"
+    },
+    {
+      "guid": "TXN-20241115-001",
+      "account_guid": "ACC-CHECKING-456",
+      "merchant_guid": "MER-NETFLIX",
+      "amount": -15.99,
+      "date": "2024-11-15",
+      "description": "Netflix"
+    },
+    {
+      "guid": "TXN-20241015-001",
+      "account_guid": "ACC-CHECKING-456",
+      "merchant_guid": "MER-NETFLIX",
+      "amount": -15.99,
+      "date": "2024-10-15",
+      "description": "Netflix"
+    }
+  ]
+}

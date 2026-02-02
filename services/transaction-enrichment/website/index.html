@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CU.APP Transaction Enrichment API - Replace MX for $99/month</title>
+    <meta name="description" content="Replace MX's $50K/year transaction enrichment with our $99/month API. 10x faster, 98% cheaper. Production-ready.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .trust-badges {
+            margin-top: 40px;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .comparison {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .savings {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .features {
+            padding: 60px 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .api-example {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 60px 20px;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            padding: 30px;
+            border-radius: 8px;
+            overflow-x: auto;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .code-block pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        .pricing {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            list-style: none;
+        }
+
+        .pricing-features li::before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Stop Paying $50K/Year for Transaction Enrichment</h1>
+        <p>Replace MX with our modern API that costs 98% less</p>
+        <p class="subtitle"><strong>$99/month</strong> • &lt;50ms latency • 99.9% uptime</p>
+
+        <div class="cta-buttons">
+            <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
+            <a href="#api" class="btn btn-secondary">View API Docs</a>
+        </div>
+
+        <div class="trust-badges">
+            ✓ No credit card required &nbsp;&nbsp; ✓ Cancel anytime &nbsp;&nbsp; ✓ 30-day money-back guarantee
+        </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="comparison">
+        <h2>The Smart Choice</h2>
+        <p class="text-center">Same features. Better performance. 98% cheaper.</p>
+
+        <div class="comparison-table">
+            <div class="comparison-card">
+                <h3>MX (Old Way)</h3>
+                <div class="price">$50,000<span class="price-period">/year</span></div>
+                <ul style="list-style: none; padding: 0;">
+                    <li>❌ 200-500ms latency</li>
+                    <li>❌ $10K setup fee</li>
+                    <li>❌ 3-year contract</li>
+                    <li>❌ Limited customization</li>
+                    <li>❌ Vendor lock-in</li>
+                </ul>
+            </div>
+
+            <div class="comparison-card">
+                <h3>CU.APP (New Way)</h3>
+                <div class="price">$1,188<span class="price-period">/year</span></div>
+                <div class="savings">Save $48,812/year (98%)</div>
+                <ul style="list-style: none; padding: 0;">
+                    <li>✅ &lt;50ms latency</li>
+                    <li>✅ $0 setup fee</li>
+                    <li>✅ No contracts</li>
+                    <li>✅ Full customization</li>
+                    <li>✅ Cancel anytime</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <h2>Everything Your Members Expect</h2>
+
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <h3>Clean Descriptions</h3>
+                <p>"Netflix" instead of "NFLX*123456789 CA"</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏢</div>
+                <h3>Merchant Logos</h3>
+                <p>High-quality logos via Clearbit API</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🧠</div>
+                <h3>Smart Categorization</h3>
+                <p>ML-powered with 96% accuracy</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <h3>Subscription Tracking</h3>
+                <p>Detect recurring payments automatically</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📍</div>
+                <h3>Location Matching</h3>
+                <p>Find nearest merchant with GPS</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Global edge network, &lt;50ms anywhere</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Example -->
+    <div class="api-example" id="api">
+        <h2 style="color: white;">Simple Integration</h2>
+        <p class="text-center" style="color: #d4d4d4;">One API call. Complete enrichment.</p>
+
+        <div class="code-block">
+            <pre>
+<span style="color: #569cd6;">POST</span> https://api.cuapp.com/v1/transactions/enrich
+<span style="color: #569cd6;">Authorization:</span> Bearer YOUR_API_KEY
+
+{
+  <span style="color: #9cdcfe;">"transaction"</span>: {
+    <span style="color: #9cdcfe;">"guid"</span>: <span style="color: #ce9178;">"TXN-123"</span>,
+    <span style="color: #9cdcfe;">"amount"</span>: <span style="color: #b5cea8;">-15.99</span>,
+    <span style="color: #9cdcfe;">"description"</span>: <span style="color: #ce9178;">"NETFLIX.COM 866-579-7172 CA"</span>,
+    <span style="color: #9cdcfe;">"date"</span>: <span style="color: #ce9178;">"2025-01-15"</span>
+  }
+}
+
+<span style="color: #6a9955;">// Response (18ms):</span>
+{
+  <span style="color: #9cdcfe;">"transaction"</span>: {
+    <span style="color: #9cdcfe;">"cleaned_description"</span>: <span style="color: #ce9178;">"Netflix"</span>,
+    <span style="color: #9cdcfe;">"merchant_name"</span>: <span style="color: #ce9178;">"Netflix"</span>,
+    <span style="color: #9cdcfe;">"merchant_logo_url"</span>: <span style="color: #ce9178;">"https://logo.clearbit.com/netflix.com"</span>,
+    <span style="color: #9cdcfe;">"category_name"</span>: <span style="color: #ce9178;">"Streaming Services"</span>,
+    <span style="color: #9cdcfe;">"category_confidence"</span>: <span style="color: #b5cea8;">0.94</span>,
+    <span style="color: #9cdcfe;">"is_subscription"</span>: <span style="color: #569cd6;">true</span>
+  }
+}
+            </pre>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://docs.cuapp.com/api" class="btn btn-primary">Full API Documentation →</a>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing" id="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <p class="text-center">No hidden fees. No surprises. Cancel anytime.</p>
+
+        <div class="pricing-grid">
+            <!-- Developer Plan -->
+            <div class="pricing-card">
+                <h3>Developer</h3>
+                <div class="price">$0<span class="price-period">/month</span></div>
+                <p>Perfect for testing</p>
+
+                <ul class="pricing-features">
+                    <li>10,000 requests/month</li>
+                    <li>Sandbox environment</li>
+                    <li>Basic merchant matching</li>
+                    <li>Community support</li>
+                </ul>
+
+                <a href="https://cuapp.com/signup?plan=developer" class="btn btn-secondary" style="width: 100%;">Sign Up Free</a>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card featured">
+                <div class="badge">Most Popular</div>
+                <h3>Professional</h3>
+                <div class="price">$99<span class="price-period">/month</span></div>
+                <p>Production-ready</p>
+
+                <ul class="pricing-features">
+                    <li>500,000 requests/month</li>
+                    <li>ML-powered categorization</li>
+                    <li>Subscription detection</li>
+                    <li>Email support (24hr)</li>
+                    <li>99.9% uptime SLA</li>
+                </ul>
+
+                <a href="https://cuapp.com/signup?plan=professional" class="btn btn-primary" style="width: 100%;">Start 30-Day Trial</a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">No credit card required</p>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">$499<span class="price-period">/month</span></div>
+                <p>For large credit unions</p>
+
+                <ul class="pricing-features">
+                    <li>5,000,000 requests/month</li>
+                    <li>Priority processing</li>
+                    <li>White-label option</li>
+                    <li>Phone/Slack support (1hr)</li>
+                    <li>99.99% uptime SLA</li>
+                </ul>
+
+                <a href="https://cuapp.com/contact?plan=enterprise" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: white; border-radius: 12px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="margin-bottom: 20px;">🎉 Limited Launch Offer</h3>
+            <p style="font-size: 1.3rem; margin-bottom: 20px;">Get <strong>50% off</strong> your first 3 months</p>
+            <p style="color: #667eea; font-weight: 600;">Use code: <span style="background: #f0f0f0; padding: 10px 20px; border-radius: 6px;">LAUNCH50</span></p>
+            <p style="margin-top: 15px; color: #666;">Valid until March 31, 2025</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <h3 style="margin-bottom: 20px;">Ready to Save $50K/Year?</h3>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Join credit unions already using CU.APP</p>
+
+            <div class="cta-buttons">
+                <a href="https://cuapp.com/signup" class="btn btn-primary">Start Free Trial</a>
+                <a href="https://cuapp.com/demo" class="btn btn-secondary">Schedule Demo</a>
+            </div>
+
+            <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p>
+                    <a href="https://docs.cuapp.com">Documentation</a> •
+                    <a href="https://cuapp.com/pricing">Pricing</a> •
+                    <a href="https://status.cuapp.com">Status</a> •
+                    <a href="https://github.com/cuapp">GitHub</a> •
+                    <a href="mailto:support@cuapp.com">Support</a>
+                </p>
+                <p style="margin-top: 20px; opacity: 0.7;">&copy; 2025 CU.APP. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
